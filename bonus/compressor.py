@@ -1,16 +1,22 @@
-import PySimpleGUI as cp
+import PySimpleGUI as ex
 
-label1 = cp.Text("Select files to compress :")
-input1 = cp.Input()
-choose_button1 = cp.FileBrowse("Choose")
+label1 = ex.Text("Select files to compress:")
+input1 = ex.Input()
+choose_button1 = ex.FileBrowse("Choose", key="files")
 
-label2 = cp.Text("Select files to compress :")
-input2 = cp.Input()
-choose_button2 = cp.FileBrowse("Choose")
+label2 = ex.Text("Select destination folder:")
+input2 = ex.Input()
+choose_button2 = ex.FolderBrowse("Choose", key="folder")
 
-compress_button = cp.Button("Compress")
+compress_button = ex.Button("Compress")
 
-window = cp.Window('File Compressor', layout=[[label1, input1, choose_button1], [label2, input2, choose_button2],
+window = ex.Window('File Compressor', layout=[[label1, input1, choose_button1], [label2, input2, choose_button2],
                                               [compress_button]])
-window.read()
+
+while True:
+    event, values = window.read()
+    print(event, values)
+    filepaths = values["files"].split(";")
+    folder = values["folder"]
+
 window.close()

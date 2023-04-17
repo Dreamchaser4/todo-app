@@ -10,5 +10,7 @@ convert_button = ex.Button("Convert")
 
 window = ex.Window('Convertor', layout=[[label1, input1], [label2, input2],
                                               [convert_button]])
+
+
 window.read()
 window.close()
