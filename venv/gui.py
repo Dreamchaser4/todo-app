@@ -6,11 +6,11 @@ gui.theme("DarkTeal2")
 clock = gui.Text('', key='clock')
 label = gui.Text("Type in a to-do")
 input_box = gui.InputText(tooltip="Enter todo", key="todo")
-add_button = gui.Button(size=5, image_source="add.png", tooltip="Add Todo", key="Add")
+add_button = gui.Button("Add")
 list_box = gui.Listbox(values=functions.get_todos(), key='todos',
-                       enable_events=True, size=[25, 10])
+                       enable_events=True, size=[30, 10])
 edit_button = gui.Button("Edit")
-complete_button = gui.Button(image_source="complete.png", tooltip="Complete", key="Complete")
+complete_button = gui.Button("Complete")
 exit_button = gui.Button("Exit")
 window = gui.Window(' My To-Do App ',
                     layout=[
